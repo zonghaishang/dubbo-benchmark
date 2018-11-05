@@ -9,29 +9,32 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>dubbo-kryo-client</artifactId>
+    <artifactId>dubbo-epoll-server</artifactId>
+
+
+    <properties>
+        <apache.dubbo.version>2.7.0-SNAPSHOT</apache.dubbo.version>
+    </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.apache.dubbo</groupId>
-            <artifactId>client-base</artifactId>
+            <artifactId>server-base</artifactId>
             <version>${project.version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>dubbo</artifactId>
+                    <groupId>com.alibaba</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <dependency>
-            <groupId>de.javakaffee</groupId>
-            <artifactId>kryo-serializers</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.esotericsoftware</groupId>
-            <artifactId>kryo</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.alibaba</groupId>
+            <groupId>org.apache.dubbo</groupId>
             <artifactId>dubbo</artifactId>
+            <version>${apache.dubbo.version}</version>
         </dependency>
+
     </dependencies>
 
     <build>
@@ -47,7 +50,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>org.apache.dubbo.benchmark.Client</mainClass>
+                            <mainClass>org.apache.dubbo.benchmark.Server</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

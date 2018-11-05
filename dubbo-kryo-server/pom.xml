@@ -22,6 +22,11 @@
             <groupId>de.javakaffee</groupId>
             <artifactId>kryo-serializers</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

@@ -36,14 +36,11 @@
         <module>dubbo-fst-server</module>
         <module>dubbo-native-hessian-client</module>
         <module>dubbo-native-hessian-server</module>
+        <module>dubbo-epoll-server</module>
+        <module>dubbo-epoll-client</module>
     </modules>
 
     <dependencies>
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>dubbo</artifactId>
-        </dependency>
-
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
